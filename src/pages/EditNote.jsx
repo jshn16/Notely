@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CreateNote(){
+function EditNote(){
     return(
       <section>
        <header>
         <Link to="/">Back</Link>
         <button>Save</button>
+        <button>Delete</button>
        </header>
        <form>
         <input type="text" placeholder="Title" autoFocus/>
@@ -16,4 +17,4 @@ function CreateNote(){
     ) 
 }
 
-export default CreateNote;
+export default EditNote;
