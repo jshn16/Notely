@@ -42,11 +42,11 @@ const EditNote = ({ notes, setNotes }) => {
 
   return (
     <section>
-      <header>
-        <Link to="/">Back</Link>
-        <button onClick={handleChange}>Save</button>
-        <button onClick={handleDelete}>Delete</button>
-      </header>
+      <div className="actions">
+        <Link className="btn-other" to="/">Back</Link>
+        <button className="btn-common" onClick={handleChange}>Save</button>
+        <button className="btn-delete" onClick={handleDelete}>Delete</button>
+      </div>
       <form>
         <input
           type="text"

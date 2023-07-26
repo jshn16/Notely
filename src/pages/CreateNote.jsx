@@ -39,11 +39,15 @@ import useCreateDate from "../components/useCreateDate";
 
   return (
     <section>
-      <header>
-        <Link to="/">Back</Link>
-        <button onClick={handleSubmit}>Save</button>
-      </header>
-      <form onSubmit={handleSubmit}>
+      
+        
+      <div className="actions">
+        <Link className="btn-other" to="/">Back</Link>
+        <button className="btn-common .create" onClick={handleSubmit}>Save</button>
+      </div>
+      <form className="form" onSubmit={handleSubmit}>
+        <h1>Create Note</h1>
+        
         <input
           type="text"
           placeholder="Title"
@@ -51,6 +55,7 @@ import useCreateDate from "../components/useCreateDate";
           onChange={(event) => setTitle(event.target.value)}
           value={title}
         />
+        
         <textarea
           rows="28"
           placeholder="Note Descriptionn"

@@ -38,6 +38,10 @@ function Notes({ notes }) {
           <NoteItem key={note.id} note={note} />
         ))}
       </div>
+      <footer>
+        <p>©2023 Notely</p>
+        <p>All Rights Reserved</p>
+      </footer>
     </section>
   );
 }
