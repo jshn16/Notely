@@ -9,7 +9,7 @@ function NoteItem({note}){
         <Link className="note" to={`/edit-note/${note.id}`}>
             <h4>{note.title}</h4>
            
-            <p>{note.description.length>50? (note.description.substr(0,50))+`...`:(note.description)}</p>
+            <p>{note.description.length>150? (note.description.substr(0,130))+`...`:(note.description)}</p>
 
             <span>Edited: {note.date}</span>
             

@@ -26,6 +26,8 @@ import useCreateDate from "../components/useCreateDate";
           description
         }
         setNotes(prevNotes =>[note, ...prevNotes])
+
+        
         console.log(note)
 
 

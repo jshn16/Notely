@@ -9,6 +9,9 @@ import NoteItem from "../components/NoteItem";
 
 import CSS from "../App.css";
 
+import CreateNote from "./CreateNote";
+import EditNote from "./EditNote";
+
 function Notes({ notes }) {
   return (
     <section>
@@ -19,16 +22,21 @@ function Notes({ notes }) {
 
         <div>
           <input type="text" autoFocus placeholder="Keyword" />
-          <button type="submit" className="btn-common">Find</button>
+          <button type="submit" className="btn-common find">
+            Find
+          </button>
         </div>
       </header>
+      <div className="create">
+        <Link className="btn-common create" to="/create-note">
+          Create Note
+        </Link>
+      </div>
+
       <div className="notes">
         {notes.map((note) => (
           <NoteItem key={note.id} note={note} />
         ))}
-      </div>
-      <div>
-        <Link className="btn-common" to="/create-note">Create Note</Link>
       </div>
     </section>
   );
