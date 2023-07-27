@@ -38,6 +38,7 @@ function Notes({ notes }) {
           Create Note
         </Link>
       </div>
+      
 
       <div className="notes">
         {notes.map((note) => (

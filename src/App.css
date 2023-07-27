@@ -166,7 +166,7 @@ a.create {
 
 div.notes {
   scroll-behavior: smooth;
-  
+  height: 70vh;
   overflow-x: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -262,13 +262,14 @@ footer {
 
 div.logo{
   height: 50px;
-  
 
 }
 
 div.logo a img{
   height: 100%;
 }
+
+
 
 @media screen and (max-width: 800px) {
   header {
@@ -294,9 +295,10 @@ div.logo a img{
 
   div.notes {
     display: grid;
+    max-height: 70vh;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
-    padding: 1rem;
+    padding: 2rem 1rem;
   }
 
   div.actions {
