@@ -25,7 +25,7 @@ p,
 a,
 li {
   text-decoration: none;
-  font-family: "Roboto", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: 500;
 }
 
@@ -75,9 +75,20 @@ header div:nth-child(2) input {
   border-width: 0;
   outline: none;
   border-radius: 2rem;
-  background-color: #52c234;
+  /* background-color: #52c234; */
+  background-image: linear-gradient(120deg,
+    #52c234
+    , 
+    #061700);
   color: #ecf0f1;
-  transition: background-color 0.3s;
+  transition:all background-color 0.8s;
+  background-size: 140% ;
+}
+
+.btn-common:hover{
+  background-position: 50%; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
 
 .btn-other {
@@ -93,9 +104,19 @@ header div:nth-child(2) input {
   border-width: 0;
   outline: none;
   border-radius: 2rem;
-  background-color: #0575e6;
+  background-image: linear-gradient(190deg,
+    
+#000428
+, 
+#004e92
+  );
   color: #ecf0f1 !important;
-  transition: background-color 0.3s;
+  transition: all background-color 0.8s;
+  background-size: 140%;
+}
+
+.btn-other:hover{
+  background-position: 50%;
 }
 
 .btn-delete {
@@ -111,9 +132,17 @@ header div:nth-child(2) input {
   border-width: 0;
   outline: none;
   border-radius: 2rem;
-  background-color: #e52d27;
+  background-image: linear-gradient(120deg, #e52d27
+  , 
+  #b31217);
   color: #ecf0f1 !important;
   transition: background-color 0.3s;
+  background-size: 140%;
+
+}
+
+.btn-delete:hover{
+  background-position: 80%;
 }
 
 .btn-common.find {
@@ -138,7 +167,7 @@ a.create {
 
 div.notes {
   scroll-behavior: smooth;
-  height: 80vh;
+  min-height: 100vh;
   overflow-x: auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -217,6 +246,7 @@ form textarea {
 }
 
 footer{
+ 
   color: #fff;
   height: 70px;
   display: flex;
@@ -321,6 +351,10 @@ div.notes span{
     padding: 0;
   }
 } */
+
+         
+
+
 
 @media screen and (max-width: 800px) {
   header {
