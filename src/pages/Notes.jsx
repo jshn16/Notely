@@ -11,13 +11,19 @@ import CSS from "../App.css";
 
 import CreateNote from "./CreateNote";
 import EditNote from "./EditNote";
+import logo from '../favicon.png'
 
 function Notes({ notes }) {
   return (
     <section>
       <header>
+
         <div>
-          <h1>My Notes</h1>
+          <div className="logo">
+            <a>
+              <img src={logo}/>
+            </a>
+          </div>  
         </div>
 
         <div>

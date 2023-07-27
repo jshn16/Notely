@@ -52,11 +52,12 @@ const EditNote = ({ notes, setNotes }) => {
           type="text"
           placeholder="Title"
           autoFocus
+          required
           defaultValue={title}
           onChange={(event) => setTitle(event.target.value)}
         />
         <textarea
-          rows="28"
+          rows="20" required
           placeholder="Note Descriptionn"
           defaultValue={description}
           onChange={(event) => {

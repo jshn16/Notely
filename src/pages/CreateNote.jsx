@@ -52,12 +52,14 @@ import useCreateDate from "../components/useCreateDate";
           type="text"
           placeholder="Title"
           autoFocus
+          required
           onChange={(event) => setTitle(event.target.value)}
           value={title}
         />
         
         <textarea
-          rows="28"
+          rows="20"
+          required
           placeholder="Note Descriptionn"
           value={description}
           onChange={(event) => {
