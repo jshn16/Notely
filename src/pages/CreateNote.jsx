@@ -45,7 +45,11 @@ import useCreateDate from "../components/useCreateDate";
         <Link className="btn-other" to="/">Back</Link>
         <button className="btn-common .create" onClick={handleSubmit}>Save</button>
       </div>
+
+<hr />
+
       <form className="form" onSubmit={handleSubmit}>
+
         <h1>Create Note</h1>
         
         <input

@@ -23,19 +23,20 @@ const EditNote = ({ notes, setNotes }) => {
       const newNote = { ...findNote, title, description, date };
 
       const saveNewNote = notes.map((note) => {
-        if (note.id == id) {
+        if (note.id === id) {
           note = newNote;
         }
         return note;
       });
 
       setNotes(saveNewNote);
+      
     }
     navigate("/");
   };
 
   const handleDelete = () => {
-    let removeNote = notes.filter((note) => note.id != id);
+    let removeNote = notes.filter((note) => note.id !== id);
     setNotes(removeNote);
     navigate("/");
   };
@@ -43,10 +44,18 @@ const EditNote = ({ notes, setNotes }) => {
   return (
     <section>
       <div className="actions">
-        <Link className="btn-other" to="/">Back</Link>
-        <button className="btn-common" onClick={handleChange}>Save</button>
-        <button className="btn-delete" onClick={handleDelete}>Delete</button>
+        <Link className="btn-other" to="/">
+          Back
+        </Link>
+        <button className="btn-common" onClick={handleChange}>
+          Save
+        </button>
+        <button className="btn-delete" onClick={handleDelete}>
+          Delete
+        </button>
       </div>
+
+      <hr />
       <form>
         <input
           type="text"
@@ -57,7 +66,8 @@ const EditNote = ({ notes, setNotes }) => {
           onChange={(event) => setTitle(event.target.value)}
         />
         <textarea
-          rows="20" required
+          rows="20"
+          required
           placeholder="Note Descriptionn"
           defaultValue={description}
           onChange={(event) => {

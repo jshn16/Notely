@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //importing dummy notes..
 import dummyNotes from "../dummy-notes";
@@ -11,24 +11,56 @@ import CSS from "../App.css";
 
 import CreateNote from "./CreateNote";
 import EditNote from "./EditNote";
-import logo from '../favicon.png'
+import logo from "../favicon.png";
 
 function Notes({ notes }) {
+  const [text, setText] = useState("");
+  const [searchedNotes, setSearchedNotes] = useState(notes);
+
+  function handleSearch() {
+    setSearchedNotes(
+      notes.filter((note) => {
+        if (
+          //If searched value after converting to lowercase matches to title or description of the notes than return all
+
+          note.title.toLowerCase().match(text.toLowerCase()) ||
+          note.description.toLowerCase().match(text.toLowerCase())
+        ) {
+          return note;
+        }
+      })
+    );
+  }
+
   return (
     <section>
       <header>
-
         <div>
           <div className="logo">
-            <a>
-              <img src={logo}/>
-            </a>
-          </div>  
+            <Link to={"/"}>
+              <img src={logo} />
+            </Link>
+          </div>
         </div>
 
         <div>
-          <input type="text" autoFocus placeholder="Keyword" />
-          <button type="submit" className="btn-common find">
+          <input
+            type="text"
+            autoFocus
+            placeholder="Find Notes"
+            value={text}
+            onChange={(event) => {
+              setText(event.target.value);
+              {
+                handleSearch();
+              }
+            }}
+          />
+          <button
+            type="submit"
+            className="btn-common find"
+            onClick={handleSearch}
+          >
             Find
           </button>
         </div>
@@ -38,10 +70,9 @@ function Notes({ notes }) {
           Create Note
         </Link>
       </div>
-      
 
       <div className="notes">
-        {notes.map((note) => (
+        {searchedNotes.map((note) => (
           <NoteItem key={note.id} note={note} />
         ))}
       </div>
