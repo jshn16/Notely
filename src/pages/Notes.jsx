@@ -13,6 +13,8 @@ import CreateNote from "./CreateNote";
 import EditNote from "./EditNote";
 import logo from "../favicon.png";
 
+
+
 function Notes({ notes }) {
   const [text, setText] = useState("");
   const [searchedNotes, setSearchedNotes] = useState(notes);
@@ -69,6 +71,7 @@ function Notes({ notes }) {
         <Link className="btn-common create" to="/create-note">
           Create Note
         </Link>
+        
       </div>
 
       <div className="notes">

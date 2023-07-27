@@ -26,6 +26,8 @@ function App() {
     localStorage.setItem("notes", JSON.stringify(notes));
   });
 
+//disabled in production mode.
+
   useEffect(() => {
     const handleContextmenu = (e) => {
       e.preventDefault();

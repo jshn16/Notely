@@ -3,18 +3,29 @@ import { Link } from "react-router-dom";
 
 import useCreateDate from "./useCreateDate";
 
-function NoteItem({note}){
-    const date=useCreateDate();
-    return(
-        <Link className="note" to={`/edit-note/${note.id}`}>
-            <h4>{note.title}</h4>
-           
-            <p>{note.description.length>150? (note.description.substr(0,130))+`...`:(note.description)}</p>
+import EditRoundedIcon from "@mui/icons-material/EditRounded";
 
-            <span>Edited: {note.date}</span>
-            
-        </Link>
-    )
+
+
+function NoteItem({ note }) {
+  const date = useCreateDate();
+  return (
+    <a className="note">
+      <h4>{note.title}</h4>
+
+      <p>
+        {note.description.length > 150
+          ? note.description.substr(0, 130) + `...`
+          : note.description}
+      </p>
+
+      <Link className="edit" to={`/edit-note/${note.id}`}>
+        <EditRoundedIcon />
+      </Link>
+
+      <span>Edited: {note.date}</span>
+    </a>
+  );
 }
 
 export default NoteItem;
