@@ -303,3 +303,6 @@ svg{
   font-size: 2rem !important;
 }
 
+section.notes{
+  display: flex;
+}

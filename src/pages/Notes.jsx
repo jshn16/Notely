@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 //importing dummy notes..
-import dummyNotes from "../dummy-notes";
+
 
 import { Link } from "react-router-dom";
 
@@ -13,9 +13,11 @@ import CreateNote from "./CreateNote";
 import EditNote from "./EditNote";
 import logo from "../favicon.png";
 
-
-
 function Notes({ notes }) {
+  useEffect(() => {
+    document.title = "Notely";
+  }, []);
+
   const [text, setText] = useState("");
   const [searchedNotes, setSearchedNotes] = useState(notes);
 
@@ -71,13 +73,16 @@ function Notes({ notes }) {
         <Link className="btn-common create" to="/create-note">
           Create Note
         </Link>
-        
       </div>
 
       <div className="notes">
         {searchedNotes.map((note) => (
           <NoteItem key={note.id} note={note} />
         ))}
+      </div>
+
+      <div className="preview">
+        
       </div>
       <footer>
         <p>©2023 Notely</p>

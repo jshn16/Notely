@@ -5,7 +5,7 @@ import CSS from "./App.css";
 // importing routes for navigation
 import { BrowserRouter, Routes, Route, Link, json } from "react-router-dom";
 
-import dummyNotes from "./dummy-notes";
+
 
 //import useState
 

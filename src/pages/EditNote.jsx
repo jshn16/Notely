@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import useCreateDate from "../components/useCreateDate";
 import CSS from "../App.css";
 
 const EditNote = ({ notes, setNotes }) => {
+
+  useEffect(() => {
+    document.title=`Edit Note: ${title}`
+  }, []);
+
   const navigate = useNavigate();
 
   const { id } = useParams();
